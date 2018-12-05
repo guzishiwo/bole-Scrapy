@@ -72,12 +72,12 @@ class MysqlTwistedPipeLine(object):
         # 执行具体的插入
         insert_sql = """
             insert into bole_article 
-            (title, created_date, main_image_url, vote_num, bookmark_num, content, tags) 
-            values  (%s, %s, %s, %s, %s, %s, %s)
+            (title, created_date, vote_num, bookmark_num, content, tags) 
+            values  (%s, %s, %s, %s, %s, %s)
         """
         cursor.execute(insert_sql,
                        (item['title'], item['created_date'],
-                        item['main_image_url'],
+                        # item['main_image_url'],
                         item['vote_num'], item['bookmark_num'],
                         item['content'],
                         item['tags']))
